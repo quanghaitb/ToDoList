@@ -1,8 +1,12 @@
 
 from django.contrib import admin
 from django.urls import path, include
-from .views import JobDetail, JobList
+from .views import JobDetail, JobList, JobFilter
 # from .views import 
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 app_name = 'job_api'
 

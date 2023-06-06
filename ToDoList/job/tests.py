@@ -12,14 +12,14 @@ class Test_Create_Job(TestCase):
     def test_Job_content(self):
         job = Job.jobobject.get(id = 1)
         typ = Type.objects.get(id =  1)
-        description  = f'{job.desciption}'
+        desciption  = f'{job.desciption}'
         author  = f'{job.author}'
         title  = f'{job.title}'
         status  = f'{job.status}'
         level =  f'{job.level}'
         self.assertEqual(author, 'test_user1')
         self.assertEqual(title, 'job title')
-        self.assertEqual(description, 'job description')
+        self.assertEqual(desciption, 'job desciption')
         self.assertEqual(level, 'job level')
         self.assertEqual(status, 'published')
         self.assertEqual(str(job), 'job title')

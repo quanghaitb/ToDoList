@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.utils import timezone
 
 # Create your models here.
@@ -33,7 +33,7 @@ class Job(models.Model):
     level = models.CharField(max_length=250, choices=options_level, default='hastiness')
     degree_of_urgency = models.CharField(max_length=250, choices=options_degree,default='not important')
     deadline = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'todo_job')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name = 'todo_job')
     objects = models.Manager()
     jobobject = JobObjects()
     class Meta:
